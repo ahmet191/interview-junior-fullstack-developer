@@ -13,4 +13,10 @@ export class CitiesController {
     const newId = this._citiesService.addCity(cityName, count);
     return { id: newId };
   }
+
+  @Post('deleteCity')
+  deleteCity(@Body('uuid') uuid: string) {
+    const result = this._citiesService.deleteCity(uuid);
+    return result;
+  }
 }
