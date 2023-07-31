@@ -19,4 +19,16 @@ export class CitiesController {
     const result = this._citiesService.deleteCity(uuid);
     return result;
   }
+
+  @Get('getByName')
+  getCitiesByName(@Body('cityName') cityName: string) {
+    const cities = this._citiesService.filterCitiesByName(cityName);
+    return cities;
+  }
+
+  @Get('getByCount')
+  getCitiesByCount(@Body('count') count: string) {
+    const cities = this._citiesService.filterCitiesByCount(count);
+    return cities;
+  }
 }
