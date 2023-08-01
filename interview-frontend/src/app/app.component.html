@@ -1,63 +1,10 @@
 <div class="content p-5" role="main">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-lg-12">
-        <div class="card">
-          <div class="card-header border-0">
-            <div class="d-flex align-items-center">
-              <h5 class="card-title mb-0 flex-grow-1 text-center">
-                Search a City
-              </h5>
-            </div>
-          </div>
-          <!-- end of card header-->
-
-          <div
-            class="card-body border border-dashed border-end-0 border-start-0"
-          >
-            <form>
-              <div class="row g-3">
-                <div class="col-lg-6">
-                  <label for="cityName-field" class="form-label"
-                    >City Name:</label
-                  >
-                  <input
-                    id="cityName-field"
-                    class="form-control"
-                    type="text"
-                    name="cityName"
-                    placeholder="Provide a city name please..."
-                  />
-                </div>
-                <!--end col-->
-
-                <div class="col-lg-6">
-                  <label for="cityCount-field" class="form-label"
-                    >City Count:</label
-                  >
-                  <input
-                    id="cityCount-field"
-                    class="form-control"
-                    type="text"
-                    name="cityCount"
-                    placeholder="Provide a city count please..."
-                  />
-                </div>
-                <!--end col-->
-                <div class="col-lg-6">
-                  <button class="btn btn-primary">Search</button>
-                </div>
-              </div>
-            </form>
-          </div>
-          <!-- end of card body-->
-        </div>
-        <!-- end of card -->
-      </div>
-      <!-- end of column -->
+      <router-outlet></router-outlet>
     </div>
-    <!-- end of row -->
+    <!-- end of card -->
   </div>
+  <!-- end of column -->
 </div>
-
-<router-outlet></router-outlet>
+<!-- end of row -->

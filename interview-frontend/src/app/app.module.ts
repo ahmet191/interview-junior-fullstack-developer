@@ -5,10 +5,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SearchComponent } from './components/search/search.component';
+import { ResultComponent } from './components/result/result.component';
+import { IntroductionComponent } from './components/introduction/introduction.component';
+import { CitiesComponent } from './components/cities/cities.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SearchComponent,
+    ResultComponent,
+    IntroductionComponent,
+    CitiesComponent
   ],
   imports: [
     BrowserModule,
