@@ -7,17 +7,17 @@ import { CitiesComponent } from './components/cities/cities.component';
 
 const routes: Routes = [
   {
-    path:'',
-    component: IntroductionComponent
+    path: '',
+    component: IntroductionComponent,
   },
   {
-    path:'cities',
-    component:CitiesComponent
-  }
+    path: 'cities',
+    component: CitiesComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

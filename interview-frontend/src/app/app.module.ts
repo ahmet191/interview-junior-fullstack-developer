@@ -9,6 +9,7 @@ import { SearchComponent } from './components/search/search.component';
 import { ResultComponent } from './components/result/result.component';
 import { IntroductionComponent } from './components/introduction/introduction.component';
 import { CitiesComponent } from './components/cities/cities.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,15 +17,16 @@ import { CitiesComponent } from './components/cities/cities.component';
     SearchComponent,
     ResultComponent,
     IntroductionComponent,
-    CitiesComponent
+    CitiesComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
