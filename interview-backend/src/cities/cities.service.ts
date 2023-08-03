@@ -14,9 +14,11 @@ async function writeToFile(path, data) {
 
 @Injectable()
 export class CitiesService {
+  mockDbPath: string;
   private cities: City[] = [];
   constructor() {
-    readJsonFile('./cities.json').then((data) => {
+    this.mockDbPath = './cities.json';
+    readJsonFile(this.mockDbPath).then((data) => {
       this.cities = [...data];
     });
   }
@@ -25,7 +27,7 @@ export class CitiesService {
     const newId = uuidv4();
     const newCity = new City(newId, cityName, count);
     this.cities.push(newCity);
-    await writeToFile('./cities.json', JSON.stringify(this.cities));
+    await writeToFile(this.mockDbPath, JSON.stringify(this.cities));
     return newId;
   }
 
@@ -36,7 +38,7 @@ export class CitiesService {
     ) as unknown as City[];
     const endCount = this.cities.length;
     if (startCount > endCount) {
-      await writeToFile('./cities.json', JSON.stringify(this.cities));
+      await writeToFile(this.mockDbPath, JSON.stringify(this.cities));
       return true;
     }
     return false;
