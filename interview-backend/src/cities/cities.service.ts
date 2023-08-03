@@ -43,12 +43,16 @@ export class CitiesService {
   }
 
   filterCitiesByName(name) {
-    const cities = this.cities.filter((x) => x.cityName == name);
+    const cities = this.cities.filter((x) =>
+      x.cityName.toLowerCase().includes(name),
+    );
     return cities;
   }
 
   filterCitiesByCount(count) {
-    const cities = this.cities.filter((x) => x.count == count);
+    const cities = this.cities.filter((x) =>
+      x.count.toString().includes(count),
+    );
     return cities;
   }
 

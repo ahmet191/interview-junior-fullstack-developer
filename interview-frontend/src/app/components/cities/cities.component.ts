@@ -7,17 +7,4 @@ import { City } from './city.model';
   templateUrl: './cities.component.html',
   styleUrls: ['./cities.component.scss'],
 })
-export class CitiesComponent {
-  cities: City[] = new Array<City>();
-
-  constructor(private cityService: CityService) {}
-
-  ngOnInit() {
-    var result = this.cityService.getAll();
-    result.forEach((cities: any) => {
-      cities.forEach((city: any) => {
-        this.cities.push(city);
-      });
-    });
-  }
-}
+export class CitiesComponent {}

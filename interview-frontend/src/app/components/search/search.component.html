@@ -9,7 +9,7 @@
     <!-- end of card header-->
 
     <div class="card-body border border-dashed border-end-0 border-start-0">
-      <form>
+      <form #citysearch="ngForm" (ngSubmit)="searchCities(citysearch.value)">
         <div class="row g-3">
           <div class="col-lg-6">
             <label for="cityName-field" class="form-label">City Name:</label>
@@ -20,6 +20,7 @@
               name="cityName"
               ng-model="cityName"
               placeholder="Provide a city name please..."
+              ngModel
             />
           </div>
           <!--end col-->
@@ -33,11 +34,18 @@
               name="cityCount"
               ng-model="cityCount"
               placeholder="Provide a city count please..."
+              ngModel
             />
           </div>
           <!--end col-->
           <div class="col-lg-6">
-            <button type="button" class="btn btn-primary">Search</button>
+            <button
+              type="submit"
+              (ngClick)="searchCities(citysearch.value)"
+              class="btn btn-primary"
+            >
+              Search
+            </button>
           </div>
         </div>
       </form>
@@ -45,3 +53,5 @@
   </div>
   <!-- end of card body-->
 </div>
+
+<app-result [cities]="cities"></app-result>

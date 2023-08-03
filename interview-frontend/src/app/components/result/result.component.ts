@@ -16,6 +16,16 @@ import { City } from '../cities/city.model';
   styleUrls: ['./result.component.scss'],
 })
 export class ResultComponent {
+  title = 'pagination';
+  page: number = 1;
+  count: number = 0;
+  tableSize: number = 5;
+  tableSizes: any = [5, 10, 20, 50];
+
   @Input()
   cities: City[] = [];
+
+  onTableDataChange(event: any) {
+    this.page = event;
+  }
 }

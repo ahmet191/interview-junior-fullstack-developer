@@ -10,18 +10,37 @@
       <div class="card-body border border-dashed border-end-0 border-start-0">
         <table class="table table-hover mb-1 p-3">
           <thead>
+            <th>No</th>
             <th>UUID</th>
             <th>City Name</th>
             <th>Count</th>
           </thead>
           <tbody>
-            <tr *ngFor="let city of cities">
+            <tr
+              *ngFor="
+                let city of cities
+                  | paginate
+                    : {
+                        itemsPerPage: 5,
+                        currentPage: page,
+                        totalItems: count
+                      };
+                let i = index
+              "
+            >
+              <td>{{ 5 * page - 4 + i }}</td>
               <td>{{ city.uuid }}</td>
               <td>{{ city.cityName }}</td>
               <td>{{ city.count }}</td>
             </tr>
           </tbody>
         </table>
+        <pagination-controls
+          previoslyLabel="Prev"
+          nextLabel="Next"
+          (pageChange)="onTableDataChange($event)"
+          (pageBoundsCorrection)="onTableDataChange($event)"
+        ></pagination-controls>
       </div>
     </div>
   </div>

@@ -10,6 +10,7 @@ import { ResultComponent } from './components/result/result.component';
 import { IntroductionComponent } from './components/introduction/introduction.component';
 import { CitiesComponent } from './components/cities/cities.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     NgbModule,
     HttpClientModule,
+    NgxPaginationModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
